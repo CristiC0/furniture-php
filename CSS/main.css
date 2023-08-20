@@ -1,0 +1,421 @@
+/* General */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+* {
+    margin: 0;
+    font-family: "Source Sans Pro", sans-serif;
+}
+a:active {
+    color: inherit;
+}
+::selection {
+    background-color: rgba(0, 0, 0, 0);
+    color: blue;
+}
+
+/* Variables */
+:root {
+    --accent-color: #1984fd;
+    --visibility-switch: hidden;
+    --animation-underline: scale(0, 1);
+}
+
+/* Upper Header Menu*/
+header {
+    height: 100vh;
+    color: white;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    font-family: inherit;
+}
+a:visited {
+    color: inherit;
+}
+
+/*-----Menu-Up-----*/
+#menu-up {
+    display: flex;
+    top: 0;
+    justify-content: space-between;
+    z-index: 3;
+    align-items: center;
+    position: sticky;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    color: black;
+    font-weight: 500;
+    font-size: 1.5rem;
+    background-color: rgb(231, 230, 230);
+}
+@keyframes menuBackgr {
+    to {
+        background-color: rgb(231, 230, 230);
+        color: black;
+    }
+}
+.menu-up-element:nth-of-type(1):hover,
+.mini-menu-element:hover,
+h1:hover {
+    color: orange;
+    cursor: pointer;
+}
+
+.menu-up-element:nth-of-type(1) {
+    margin-left: 20px;
+}
+.menu-up-element:nth-of-type(2) {
+    margin-right: 20px;
+}
+.menu-up-element {
+    margin: 10px;
+}
+#mini-menu {
+    display: flex;
+}
+.mini-menu-element {
+    margin: 20px;
+}
+#menu-up h1 {
+    font-size: 3rem;
+    font-family: "Cedarville Cursive", cursive;
+    font-weight: 800;
+    text-shadow: 2px 2px 5px black;
+}
+#userName {
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: orange;
+    text-shadow: 1px 1px black;
+    text-decoration: underline;
+}
+
+/*-----Menu Side-----*/
+#menu-side-back {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.7);
+}
+
+#close-menu {
+    z-index: 6;
+    width: 2%;
+    height: 2%;
+    position: fixed;
+    left: -5%;
+    top: 5%;
+    cursor: pointer;
+    animation-fill-mode: forwards;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in;
+}
+#close-menu::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.2rem;
+    transform: rotate(45deg);
+    background-color: black;
+    border-radius: 10%;
+}
+#close-menu::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0.2rem;
+    transform: rotate(-45deg);
+    background-color: black;
+    border-radius: 10%;
+}
+
+#menu-side,
+#submenu-side,
+#menu-side-res {
+    display: none;
+    position: fixed;
+    left: -30%;
+    z-index: 4;
+    width: 30%;
+    height: 100%;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.7);
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+#menu-side {
+    z-index: 5;
+}
+#menu-side-res {
+    width: 50%;
+}
+#menu-side .social-media,
+#menu-side-res .social-media {
+    position: absolute;
+    bottom: 10%;
+    margin-left: 10%;
+    font-size: 1.1rem;
+}
+.social-media a:hover {
+    color: orange;
+    opacity: 0.7;
+}
+#menu-side::after {
+    visibility: var(--visibility-switch);
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 15%;
+    width: 2%;
+    height: 100%;
+    border-right: 2px solid orange;
+}
+#menu-side ul,
+#submenu-side ul,
+#menu-side-res ul {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+#menu-side ul li,
+#submenu-side ul li,
+#menu-side-res ul li {
+    list-style: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin: 10px;
+}
+#menu-side ul li a,
+#submenu-side ul li a,
+#menu-side-res ul li a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+#menu-side ul li a::after,
+#submenu-side ul li a::after,
+#menu-side-res ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.1rem;
+    background-color: orange;
+    transform: scale(0, 1);
+    transition: transform 0.15s ease-out;
+    transform-origin: 0 0;
+}
+#menu-side ul li a:hover::after,
+#submenu-side ul li a:hover::after,
+#menu-side-res ul li a:hover::after {
+    transform: scale(1, 1);
+}
+#menu-side-main {
+    display: none;
+}
+
+#submen1,
+#submen2,
+#submen3,
+#submen4 {
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+#submen2,
+#submen3,
+#submen4 {
+    display: none;
+}
+
+/*-----Footer-----*/
+footer {
+    background-color: rgb(231, 230, 230);
+    height: 45vh;
+    position: relative;
+    bottom: 0;
+    font-size: 1.2rem;
+}
+#footer-content {
+    block-size: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+#footer-left-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    margin-right: 100px;
+}
+#footer-lists {
+    margin-top: 30px;
+    display: flex;
+    line-height: 1.8rem;
+}
+#footer-lists ul li {
+    list-style: none;
+    transition-duration: 0.4s;
+}
+#footer-lists ul li a:hover {
+    color: orange;
+    opacity: 0.7;
+}
+#footer-logo {
+    font-size: 2rem;
+    font-family: "Cedarville Cursive", cursive;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px black;
+    text-align: center;
+}
+
+#footer-left-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#emailLogfooter {
+    background-color: rgb(231, 230, 230);
+    border: none;
+    outline: none;
+    color: rgba(0, 0, 0, 0.7);
+}
+.txthlpfoot p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+/*----Keyframes-----*/
+@keyframes menuside {
+    from {
+        left: -30%;
+    }
+    to {
+        left: 0%;
+    }
+}
+@keyframes closemove {
+    from {
+        left: -5%;
+    }
+    to {
+        left: 25%;
+    }
+}
+@keyframes closemovereverse {
+    from {
+        left: 25%;
+    }
+    to {
+        left: -5%;
+    }
+}
+@keyframes closemovesec {
+    from {
+        left: 25%;
+    }
+    to {
+        left: 55%;
+    }
+}
+@keyframes closemovesecreverse {
+    from {
+        left: 55%;
+    }
+    to {
+        left: 25%;
+    }
+}
+@keyframes menusidereverse {
+    from {
+        left: 0%;
+    }
+    to {
+        left: -30%;
+    }
+}
+@keyframes menusideresp {
+    from {
+        left: -50%;
+    }
+    to {
+        left: 0%;
+    }
+}
+@keyframes menusidereverseresp {
+    from {
+        left: 0%;
+    }
+    to {
+        left: -50%;
+    }
+}
+@keyframes submenuside {
+    from {
+        left: 0%;
+    }
+    to {
+        left: 29%;
+    }
+}
+@keyframes submenusidereverse {
+    from {
+        left: 29%;
+    }
+    to {
+        left: 0%;
+    }
+}
+
+/* -----Media Query----- */
+@media (max-width: 750px) {
+    :root {
+        font-size: 14px;
+    }
+    #mini-menu {
+        display: none;
+    }
+    h1 {
+        margin-right: 30px;
+    }
+    #menu-side {
+        display: none;
+        width: 50%;
+    }
+    #submenu-side {
+        display: none;
+        width: 30%;
+    }
+}
+@media (max-width: 500px) {
+    :root {
+        font-size: 12px;
+    }
+    #footer-content {
+        flex-direction: column;
+    }
+}
+
+.removeButton {
+    background-color: rgba(255, 0, 0, 0);
+    cursor: pointer;
+    border: none;
+}

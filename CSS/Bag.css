@@ -1,0 +1,99 @@
+#container-bag-content {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.bag-element {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    background-color: rgb(211, 210, 210);
+    display: flex;
+    margin: auto;
+    width: 80%;
+    border: 2px solid orange;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+.bag-element img {
+    width: 30%;
+}
+.bag-info {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 0 20px 0 20px;
+}
+.name {
+    margin-bottom: 20px;
+    color: orange;
+    font-size: 1.4rem;
+}
+.desc {
+    font-size: 1.2rem;
+}
+
+.priceinfo {
+    margin: 0 20px 0 20px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.price {
+    font-size: 2.5rem;
+    color: red;
+}
+.remove {
+    font-size: 1.5rem;
+    color: orange;
+    transition-timing-function: ease-in;
+    cursor: pointer;
+}
+.remove:hover {
+    opacity: 0.5;
+}
+#buy-section {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#buy-section-pos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#buy-button {
+    color: white;
+    font-size: 2rem;
+    font-weight: bolder;
+    border: none;
+    background-color: black;
+    padding: 1rem;
+    width: 80%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    margin-top: 10px;
+}
+#buy-button:hover {
+    opacity: 0.7;
+}
+#price-total {
+    font-size: 2rem;
+    font-weight: bolder;
+    color: red;
+    margin-right: 20px;
+}
+/*-----Media Query-----*/
+@media (max-width: 750px) {
+    img {
+        display: none;
+    }
+}
+
+
